@@ -1,0 +1,14 @@
+{
+  "name": "scl007-red-social",
+  "version": "0.0.1",
+  "description": "Red Social para Mujeres Deportistas",
+  "main": "index.js",
+  "scripts": {
+    "test": "mocha"
+  },
+  "author": "Martha Lizarazo, Katherine Retamales, Paulina Vera",
+  "license": "ISC",
+  "dependencies": {
+    "chai": "^4.2.0"
+  }
+}
