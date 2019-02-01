@@ -1,0 +1,43 @@
+<html>
+  <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="styles.css">
+  </head>
+  <body>
+      <div class="logo"></div>
+      <div class="start" id="start">
+          <h1>Registrate o inicia sesión</h1>
+          <form action="">
+          <label>Correo</label>
+          <input id="emailTextfield" type="email" placeholder="Ingrese su correo electrónico..">
+          <label>Contraseña</label>
+          <input id="passwordTextfield" type="password"  placeholder="Ingrese su contraseña..">
+          
+          <button id="loginButton">INICIAR SESION</button>
+          <button id="registerButton">REGISTRATE</button>
+          <button id="sign-google"><img src="img/google.png" width="20" height="20"> INICIAR SESION CON GOOGLE</button>
+          </form>
+      </div> 
+    <div id="app">
+        <button id="logout">salir</button>
+      <h1>¡Bienvenido/a! a la aplicación</h1>
+    </div>
+
+    <script src="https://www.gstatic.com/firebasejs/5.8.1/firebase.js"></script>
+    <script>
+      // Initialize Firebase
+      var config = {
+        apiKey: "AIzaSyDcucwWZHxbPWTF89U6n8X6o1Oe_jput3I",
+        authDomain: "redsocial-9137e.firebaseapp.com",
+        databaseURL: "https://redsocial-9137e.firebaseio.com",
+        projectId: "redsocial-9137e",
+        storageBucket: "redsocial-9137e.appspot.com",
+        messagingSenderId: "500917157257"
+      };
+      firebase.initializeApp(config);
+    </script>
+    <script src="js/dom.js"></script>
+    <script src="js/auth.js"></script>
+  </body>
+</html>
