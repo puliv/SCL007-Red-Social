@@ -1,0 +1,47 @@
+.logo{
+    background-color: #6C3483;
+    width: 100%;
+    height: 100px;
+}
+.start{
+    margin-top: 30px;
+    width: 100%;
+}
+h1{
+    color: #6C3483;
+    
+}
+.start input,button{
+    width: 90%;
+    height: 40px;
+    margin: 10px;
+    border-radius: 5px;
+    border: 1px solid #6C3483;
+}
+.start button{
+    background-color: #6C3483;
+    color: #ffffff;
+    font-size: 14px;
+    font-weight: bold;
+}
+.start input{
+    padding-left: 10px;
+    color: #6C3483;;
+    
+}
+::-webkit-input-placeholder { color: #D2B4DE; } 
+ 
+:-moz-placeholder { /* Firefox 18- */ color:#D2B4DE; } 
+ 
+::-moz-placeholder { /* Firefox 19+ */ color:#D2B4DE; } 
+ 
+:-ms-input-placeholder { color: #D2B4DE; }
+
+.start label{
+    color: #D2B4DE;
+    margin: 10px;
+    font-size: 24PX;
+}
+#sign-google{
+    background-color: #C0392B;
+}
