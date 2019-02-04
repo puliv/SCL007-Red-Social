@@ -45,3 +45,10 @@ h1{
 #sign-google{
     background-color: #C0392B;
 }
+@media only screen and (min-width: 768px) {
+    .start{
+        margin-left: 35%;
+        
+        width: 30%;
+    }
+} 
