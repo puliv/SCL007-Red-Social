@@ -25,7 +25,7 @@ window.onload = () => {
     const passwordFromUser = passwordTextfield.value;
     loginUser(emailFromUser, passwordFromUser);
   })
-
+//se
   document.getElementById('sign-google').addEventListener('click',
   (evento)=>{
     evento.preventDefault();
@@ -35,6 +35,7 @@ window.onload = () => {
       var token = result.credential.accessToken;
       // The signed-in user info.
       var user = result.user;
+      console.log(user);
       // ...
     }).catch(function(error) {
       // Handle Errors here.
@@ -45,9 +46,9 @@ window.onload = () => {
       // The firebase.auth.AuthCredential type that was used.
       var credential = error.credential;
       // ...
+      console.log(errorCode + errorMessage + email + credential)
     });
   })
-
 
   document.getElementById('logout').addEventListener('click',
   (evento)=>{
@@ -58,4 +59,24 @@ window.onload = () => {
       // An error happened.
     });
   })
+
+  document.getElementById('stateButton').addEventListener('click',
+  (evento)=>{
+    evento.preventDefault();
+    let radios = document.getElementsByName('state');
+    for (var i = 0, length = radios.length; i < length; i++)
+    {
+      if (radios[i].checked){
+      // do whatever you want with the checked radio
+      alert(radios[i].value);
+    
+      // only one radio can be logically checked, don't check the rest
+      break;
+     }
+    }
+    const contect = textareaContect.value;
+  console.log(radios);
+    //loginUser(emailFromUser, passwordFromUser);
+  })
+ 
 };
