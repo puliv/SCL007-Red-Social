@@ -5,32 +5,40 @@
     <link rel="stylesheet" href="css/styles.css">
   </head>
   <body>
-      <div class="logo"></div>
+      <div class="logo"> <button id="logout">Cerrar Secion</button></div>
       <div class="start" id="start">
           <h1>Registrate o inicia sesión</h1>
           <form action="">
           <label>Correo</label>
-          <input id="emailTextfield" type="email" placeholder="Ingrese su correo electrónico..">
+          <input id="emailTextfield" type="email" class="input" placeholder="Ingrese su correo electrónico..">
           <label>Contraseña</label>
-          <input id="passwordTextfield" type="password"  placeholder="Ingrese su contraseña..">
+          <input id="passwordTextfield" type="password"  class="input" placeholder="Ingrese su contraseña..">
           
-          <button id="loginButton">INICIAR SESION</button>
-          <button id="registerButton">REGISTRATE</button>
-          <button id="sign-google"><img src="img/google.png" width="20" height="20"> INICIAR SESION CON GOOGLE</button>
+          <button id="loginButton" class="button">INICIAR SESION</button>
+          <button id="registerButton" class="button">REGISTRATE</button>
+          <button id="sign-google" class="button"><img src="img/google.png" width="20" height="20"> INICIAR SESION CON GOOGLE</button>
           </form>
       </div> 
     <div id="app">
       <form>
-          <button id="logout">salir</button>
-          <h1>¡Bienvenido/a! a la aplicación</h1>
+          <button id="view_profile"><img src="img/perfil.png"></button>
           <textarea id="textareaContect" placeholder="¿Que estas pensando?"></textarea><br>
           <input type="radio" id="public" name="state" value="publico"><label>Público</label>
           <input type="radio" id="private" name="state" value="privado"><label>Privado</label>
           <button id="stateButton">PUBLICAR</button>
       </form>
-        
-
     </div>
+    <div id="settingProfile">
+      <h3>Información de la Cuenta</h3>
+      <p>Email</p>
+      <input id="email" value="">
+      <p>Nombre de Usuario</p>
+      <input id="username" class="settings-info" value="">
+      <p>Deporte que practicas</p>
+      <textarea id="sport" rows="20" class="settings-info" placeholder="Describenos tus intereses.."></textarea>
+      <button id="save-settings">Guardar Cambios</button>
+    </div>
+    <div id="postContainer"></div>
 
     <script src="https://www.gstatic.com/firebasejs/5.8.1/firebase.js"></script>
     <script>
@@ -47,5 +55,6 @@
     </script>
     <script src="js/dom.js"></script>
     <script src="js/auth.js"></script>
+    <script src="js/data.js"></script>
   </body>
 </html>

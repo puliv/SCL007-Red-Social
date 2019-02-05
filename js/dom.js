@@ -4,9 +4,13 @@ window.onload = () => {
     if(user){
       start.style.display = "none";
       app.style.display = "block";
+      logout.style.display = "block";
+      readPostFromDatabase();
     }else{
       start.style.display = "block";
       app.style.display = "none";
+      settingProfile.style.display = "none";
+      logout.style.display = "none";
     }
   });
 
@@ -63,20 +67,45 @@ window.onload = () => {
   document.getElementById('stateButton').addEventListener('click',
   (evento)=>{
     evento.preventDefault();
-    let radios = document.getElementsByName('state');
-    for (var i = 0, length = radios.length; i < length; i++)
-    {
-      if (radios[i].checked){
-      // do whatever you want with the checked radio
-      alert(radios[i].value);
-    
-      // only one radio can be logically checked, don't check the rest
-      break;
-     }
-    }
     const contect = textareaContect.value;
-  console.log(radios);
-    //loginUser(emailFromUser, passwordFromUser);
+    const radios = document.getElementsByName('state');
+    for (var i = 0, length = radios.length; i < length; i++){
+      if (radios[i].checked){
+        statusRadio = radios[i].value;
+        break;
+      }
+    }
+    registerPost(contect, statusRadio);
   })
- 
 };
+
+const readPostFromDatabase = () => {
+  readPost((post)=>{
+    postContainer.innerHTML = postContainer.innerHTML + 
+    `<h3>${post.val().post}</h3>
+     <h6>${post.val().status}</h6>`; 
+  });
+}
+
+
+document.getElementById('save-settings').addEventListener('click',
+  (evento)=>{
+  evento.preventDefault();
+  const emailFromUser = email.value;
+  const usernameFromUser = username.value;
+  const sportFromUser = sport.value;
+  settingsPage(emailFromUser, usernameFromUser,sportFromUser);
+
+})
+document.getElementById('settingProfile').addEventListener('click',
+  (evento)=>{
+    evento.preventDefault();
+    start.style.display = "none";
+    app.style.display = "none";
+    settingProfile.style.display = "block";
+    logout.style.display = "none";
+  })
+
+
+
+
