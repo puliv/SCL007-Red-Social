@@ -2,7 +2,7 @@
   <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="css/styles.css">
   </head>
   <body>
       <div class="logo"></div>
@@ -20,8 +20,16 @@
           </form>
       </div> 
     <div id="app">
-        <button id="logout">salir</button>
-      <h1>¡Bienvenido/a! a la aplicación</h1>
+      <form>
+          <button id="logout">salir</button>
+          <h1>¡Bienvenido/a! a la aplicación</h1>
+          <textarea id="textareaContect" placeholder="¿Que estas pensando?"></textarea><br>
+          <input type="radio" id="public" name="state" value="publico"><label>Público</label>
+          <input type="radio" id="private" name="state" value="privado"><label>Privado</label>
+          <button id="stateButton">PUBLICAR</button>
+      </form>
+        
+
     </div>
 
     <script src="https://www.gstatic.com/firebasejs/5.8.1/firebase.js"></script>
