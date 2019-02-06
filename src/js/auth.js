@@ -19,9 +19,9 @@ const registerUser = (email, password) => {
         .catch((error) => {
             alert("Error > " + error.message);
         });
-}
-
-const loginUser =(email, password) => {
+ }
+ 
+ const loginUser =(email, password) => {
     firebase.auth().signInWithEmailAndPassword(email, password)
     .then((user) => {
         console.log("Usuario logeado > " + JSON.stringify(user));
@@ -29,4 +29,4 @@ const loginUser =(email, password) => {
     .catch((error)  => {
         console.error("Error > " + error.message);
     });
-}
+ }
