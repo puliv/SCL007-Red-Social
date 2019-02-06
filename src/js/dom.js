@@ -11,24 +11,26 @@ window.onload = () => {
   });
  
   document.getElementById('registerButton').addEventListener('click',
-  (evento)=>{
-    evento.preventDefault();
+  (event)=>{
+    event.preventDefault();
+    document.getElementById("welcome").style.display = "block";
     const emailFromUser = emailTextfield.value;
     const passwordFromUser = passwordTextfield.value;
     registerUser(emailFromUser, passwordFromUser);
   })
  
   document.getElementById('loginButton').addEventListener('click',
-  (evento)=>{
-    evento.preventDefault();
+  (event)=>{
+    event.preventDefault();
+    document.getElementById("welcome").style.display = "none";
     const emailFromUser = emailTextfield.value;
     const passwordFromUser = passwordTextfield.value;
     loginUser(emailFromUser, passwordFromUser);
   })
  //se cambiara
   document.getElementById('sign-google').addEventListener('click',
-  (evento)=>{
-    evento.preventDefault();
+  (event)=>{
+    event.preventDefault();
     var provider = new firebase.auth.GoogleAuthProvider();
     firebase.auth().signInWithPopup(provider).then(function(result) {
       // This gives you a Google Access Token. You can use it to access the Google API.
@@ -51,13 +53,34 @@ window.onload = () => {
   })
  
  
-  document.getElementById('logout').addEventListener('click',
-  (evento)=>{
-    evento.preventDefault();
+  document.getElementById('logout_btn ').addEventListener('click',
+  (event)=>{
+    event.preventDefault();
     firebase.auth().signOut().then(function() {
       // Sign-out successful.
     }).catch(function(error) {
       // An error happened.
     });
   })
+
+  document.getElementById('stateButton').addEventListener('click', (event) =>{
+    event.preventDefault();
+    // const public= document.getElementById('public').value;
+    // const private= document.getElementById('private').value;
+    const text= document.getElementById('txtarea').value;
+    console.log( text );
+  })
+
+  // document.getElementById("registerButton").addEventListener("click", (evento) => {
+  //   evento.preventDefault();
+
+    
+  //   document.getElementById("root").style.display = "none";
+  //   // document.getElementById("general-champ-container").style.display = "none";
+  //   document.getElementById("about-lolapp-section").style.display = "none";
+  //   // document.getElementById("individual-champs").style.display = "none";
+  //   window.location.href = "#header";
+
+  //  })
  };
+
