@@ -8,16 +8,16 @@ const checkAuthState = (callback) => {
             callback(null);
         }
     })
- 
- }
- const registerUser = (email, password) => {
+
+}
+//funcion que registra usuario
+const registerUser = (email, password) => {
     firebase.auth().createUserWithEmailAndPassword(email, password)
         .then((user) => {
-            console.log("Usuario registrado > " + JSON.stringify(user));
+            alert("Usuario registrado");
         })
         .catch((error) => {
-            console.error("Error > " + error.message);
-            alert(error.message);
+            alert("Error > " + error.message);
         });
  }
  

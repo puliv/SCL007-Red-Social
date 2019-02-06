@@ -61,7 +61,7 @@ window.onload = () => {
   document.getElementById('logout_btn ').addEventListener('click',
   (event)=>{
     event.preventDefault();
-
+    alert("HOLA");
     firebase.auth().signOut().then(function() {
       // Sign-out successful.
     }).catch(function(error) {
@@ -69,17 +69,10 @@ window.onload = () => {
     });
   })
 
-  document.getElementById('stateButton').addEventListener('click', (event) =>{
-    event.preventDefault();
-    // const public= document.getElementById('public').value;
-    // const private= document.getElementById('private').value;
-    const text= document.getElementById('txtarea').value;
-    console.log( text );
-  })
 
   document.getElementById('stateButton').addEventListener('click',
-  (evento)=>{
-    evento.preventDefault();
+  (event)=>{
+    event.preventDefault();
     const contect = textareaContect.value;
     const radios = document.getElementsByName('state');
     for (var i = 0, length = radios.length; i < length; i++){
