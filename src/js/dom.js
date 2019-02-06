@@ -4,13 +4,13 @@ window.onload = () => {
     if(user){
       start.style.display = "none";
       app.style.display = "block";
-      logout.style.display = "block";
+      logout_btn.style.display = "block";
       readPostFromDatabase();
     }else{
       start.style.display = "block";
       app.style.display = "none";
       settingProfile.style.display = "none";
-      logout.style.display = "none";
+      logout_btn.style.display = "none";
     }
   });
  
@@ -61,7 +61,7 @@ window.onload = () => {
   document.getElementById('logout_btn ').addEventListener('click',
   (event)=>{
     event.preventDefault();
-
+    alert("HOLA");
     firebase.auth().signOut().then(function() {
       // Sign-out successful.
     }).catch(function(error) {
@@ -69,17 +69,10 @@ window.onload = () => {
     });
   })
 
-  document.getElementById('stateButton').addEventListener('click', (event) =>{
-    event.preventDefault();
-    // const public= document.getElementById('public').value;
-    // const private= document.getElementById('private').value;
-    const text= document.getElementById('txtarea').value;
-    console.log( text );
-  })
 
   document.getElementById('stateButton').addEventListener('click',
-  (evento)=>{
-    evento.preventDefault();
+  (event)=>{
+    event.preventDefault();
     const contect = textareaContect.value;
     const radios = document.getElementsByName('state');
     for (var i = 0, length = radios.length; i < length; i++){
@@ -115,5 +108,5 @@ document.getElementById('settingProfile').addEventListener('click',
     start.style.display = "none";
     app.style.display = "none";
     settingProfile.style.display = "block";
-    logout.style.display = "none";
+    logout_btn.style.display = "none";
   })
