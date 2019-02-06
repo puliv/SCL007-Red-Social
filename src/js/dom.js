@@ -4,13 +4,13 @@ window.onload = () => {
     if(user){
       start.style.display = "none";
       app.style.display = "block";
-      logout.style.display = "block";
+      logout_btn.style.display = "block";
       readPostFromDatabase();
     }else{
       start.style.display = "block";
       app.style.display = "none";
       settingProfile.style.display = "none";
-      logout.style.display = "none";
+      logout_btn.style.display = "none";
     }
   });
  
@@ -58,7 +58,7 @@ window.onload = () => {
     });
   })
   
-  document.getElementById('logout_btn ').addEventListener('click',
+  document.getElementById('logout_btn').addEventListener('click',
   (event)=>{
     event.preventDefault();
 
@@ -115,5 +115,5 @@ document.getElementById('settingProfile').addEventListener('click',
     start.style.display = "none";
     app.style.display = "none";
     settingProfile.style.display = "block";
-    logout.style.display = "none";
+    logout_btn.style.display = "none";
   })
