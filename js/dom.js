@@ -62,6 +62,7 @@ window.onload = () => {
   (event)=>{
     event.preventDefault();
 
+
     firebase.auth().signOut().then(function() {
       // Sign-out successful.
     }).catch(function(error) {
