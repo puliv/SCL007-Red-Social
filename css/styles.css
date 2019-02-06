@@ -52,11 +52,17 @@ body{
     text-align: center;
     color: white;
  }
+ #img_welcome{
+    width:40%;
+    height:auto;
+    margin-top:10px;
+ }
  #welcome p {
     width: 100%;
     text-align: center;
     color: white;
     padding: 0 auto;
+    margin-top: 10px;
  }
  #start_btn{
     background-color: #D2B4DE;
