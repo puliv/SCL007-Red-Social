@@ -11,20 +11,20 @@ h1{
     color: #6C3483;
     
 }
-.start input,button{
+.button, .input{
     width: 90%;
     height: 40px;
     margin: 10px;
     border-radius: 5px;
     border: 1px solid #6C3483;
 }
-.start button{
+.button{
     background-color: #6C3483;
     color: #ffffff;
     font-size: 14px;
     font-weight: bold;
 }
-.start input{
+.input{
     padding-left: 10px;
     color: #6C3483;;
     
@@ -45,3 +45,23 @@ h1{
 #sign-google{
     background-color: #C0392B;
 }
+textarea{
+    margin-top: 30px;
+    width: 70%;
+    height: 100px;
+    border: 1px solid #6C3483;
+}
+#app  img{
+    width: 50px;
+    height: 50px;
+    border-radius: 50%;
+    border: 1px solid #6C3483;
+}
+@media only screen and (min-width: 768px) {
+    .start{
+        margin-left: 35%;
+        
+        width: 30%;
+    }
+} 
+
