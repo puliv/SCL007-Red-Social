@@ -2,27 +2,80 @@
  <head>
    <meta charset="UTF-8">
    <meta name="viewport" content="width=device-width, initial-scale=1">
-   <link rel="stylesheet" href="styles.css">
- </head>
+   <link rel="stylesheet" href="./css/styles.css">
+   <link rel="stylesheet" href="./css/grid.css">
+   <link href="https://fonts.googleapis.com/css?family=Bitter:400,700" rel="stylesheet">
+</head>
  <body>
-     <div class="logo"></div>
-     <div class="start" id="start">
-         <h1>Registrate o inicia sesión</h1>
-         <form action="">
-         <label>Correo</label>
-         <input id="emailTextfield" type="email" placeholder="Ingrese su correo electrónico..">
-         <label>Contraseña</label>
-         <input id="passwordTextfield" type="password"  placeholder="Ingrese su contraseña..">
+     <header class="logo">
+         <div class="container">
+             <div class="row">
+                 <div class="col-12"></div>
+                 <a href=" ">Home</a>
+             </div>
+         </div>
+     </header>
+     <main class="start" id="start">
+         <div class="container">
+             <div class="row">
+                     <div>
+                         <h1 id="first_title">Registrate o inicia sesión</h1><br>
+                         <form action="">
+                         <label>Correo</label>
+                         <input id="emailTextfield" type="email" placeholder="Ingrese su correo electrónico..">
+                         <label>Contraseña</label>
+                         <input id="passwordTextfield" type="password"  placeholder="Ingrese su contraseña..">
 
-         <button id="loginButton">INICIAR SESION</button>
-         <button id="registerButton">REGISTRATE</button>
-         <button id="sign-google"><img src="img/google.png" width="20" height="20"> INICIAR SESION CON GOOGLE</button>
-         </form>
-     </div>
-   <div id="app">
-       <button id="logout">salir</button>
-     <h1>¡Bienvenido/a! a la aplicación</h1>
-   </div>
+                         <button id="loginButton">INICIAR SESION</button>
+                         <button id="registerButton">REGISTRATE</button>
+                         <button id="sign-google"><img src="img/google.png" width="20" height="20"> INICIAR SESION CON GOOGLE</button>
+                         </form>
+                     </div>
+             </div>
+         </div>
+     </main>
+     <section id="welcome"> <!--Falta logo de LAW para poner aqui, mobile ready-->
+         <div class="container">
+             <div class="row">
+                 <div class="col-12">
+                     <h2>Like A Woman</h2>
+                     <p>Bienvenida a LAW, una gran comunidad femenina donde podrás encontrar mujeres deportistas, como tú.
+                     Te estabamos esperando</p>
+                    </div>
+                    <div class="col-12">
+                        <button id="start_btn">Empezar</button>
+                    </div>
+             </div>
+         </div>
+     </section>
+     <section id="app"> <!--Mobile ready-->
+         <div class="container">
+             <div class="row">
+                 <div class="col-12">
+                     <h1>¡Bienvenida a LAW!</h1>
+                    <textarea placeholder="¿Que estas pensando?"></textarea><br>
+                 </div>
+            </div>
+            <div class="row">
+                <div class="col-8">
+                   <button id="stateButton">Publicar</button>
+                </div>
+                <div class="col-4">
+                    <input type="radio" id="public" name="state"><label>Público</label><br>                 
+                    <input type="radio" id="private" name="state"><label>Privado</label>           
+                </div>
+            </div>
+        </div>
+    </section>
+    <footer> <!--Mobile ready-->
+        <div class="container">
+            <div class="row">
+                <div class="col-12">
+                    <button id="logout_btn">salir</button>
+                </div>
+            </div>
+        </div>
+     </footer>
 
    <script src="https://www.gstatic.com/firebasejs/5.8.1/firebase.js"></script>
    <script>
@@ -39,5 +92,6 @@
    </script>
    <script src="js/dom.js"></script>
    <script src="js/auth.js"></script>
+   <script src="data.js"></script>
  </body>
 </html>

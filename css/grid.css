@@ -88,7 +88,7 @@
   }
   
   
-  @media (max-width: 768px){
+  /* @media (max-width: 768px){
     [class*="col-"]{
       width: 100%;
       }
@@ -96,4 +96,4 @@
       #logo {
           display: none;
       }
-  }
+  } */
