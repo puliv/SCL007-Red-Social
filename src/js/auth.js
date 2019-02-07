@@ -10,7 +10,7 @@ const checkAuthState = (callback) => {
     })
  
  }
- const registerUser = (email, password) => {
+ const registerUser = (emailFromUser, passwordFromUser) => {
     firebase.auth().createUserWithEmailAndPassword(email, password)
         .then((user) => {
             console.log("Usuario registrado > " + JSON.stringify(user));
@@ -27,6 +27,6 @@ const checkAuthState = (callback) => {
         console.log("Usuario logeado > " + JSON.stringify(user));
     })
     .catch((error)  => {
-        console.error("Error > " + error.message);
+        alert("Error > " + error.message);
     });
  }
