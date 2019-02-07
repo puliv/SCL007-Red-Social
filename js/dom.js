@@ -17,7 +17,6 @@ window.onload = () => {
   document.getElementById('registerButton').addEventListener('click',
   (event)=>{
     event.preventDefault();
-    document.getElementById("welcome").style.display = "block";
     const emailFromUser = emailTextfield.value;
     const passwordFromUser = passwordTextfield.value;
     registerUser(emailFromUser, passwordFromUser);
