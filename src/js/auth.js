@@ -11,8 +11,8 @@ const checkAuthState = (callback) => {
 
 }
 //funcion que registra usuario
-const registerUser = (email, password) => {
-    firebase.auth().createUserWithEmailAndPassword(email, password)
+const registerUser = (emailFromUser, passwordFromUser) => {
+    firebase.auth().createUserWithEmailAndPassword(emailFromUser, passwordFromUser)
         .then((user) => {
             alert("Usuario registrado");
         })
@@ -21,12 +21,12 @@ const registerUser = (email, password) => {
         });
  }
  
- const loginUser =(email, password) => {
-    firebase.auth().signInWithEmailAndPassword(email, password)
+ const loginUser =(emailFromUser, passwordFromUser) => {
+    firebase.auth().signInWithEmailAndPassword(emailFromUser, passwordFromUser)
     .then((user) => {
         console.log("Usuario logeado > " + JSON.stringify(user));
     })
     .catch((error)  => {
-        console.error("Error > " + error.message);
+        alert("Error > " + error.message);
     });
  }
