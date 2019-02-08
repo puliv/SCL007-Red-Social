@@ -32,7 +32,7 @@ window.onload = () => {
     loginUser(emailFromUser, passwordFromUser);
   })
 
- //se cambiara
+ 
   document.getElementById('sign-google').addEventListener('click',
   (event)=>{
     event.preventDefault();
