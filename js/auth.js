@@ -8,25 +8,25 @@ const checkAuthState = (callback) => {
             callback(null);
         }
     })
- 
- }
- const registerUser = (email, password) => {
-    firebase.auth().createUserWithEmailAndPassword(email, password)
+
+}
+//funcion que registra usuario
+const registerUser = (emailFromUser, passwordFromUser) => {
+    firebase.auth().createUserWithEmailAndPassword(emailFromUser, passwordFromUser)
         .then((user) => {
-            console.log("Usuario registrado > " + JSON.stringify(user));
+            alert("Usuario registrado");
         })
         .catch((error) => {
-            console.error("Error > " + error.message);
-            alert(error.message);
+            alert("Error > " + error.message);
         });
  }
  
- const loginUser =(email, password) => {
-    firebase.auth().signInWithEmailAndPassword(email, password)
+ const loginUser =(emailFromUser, passwordFromUser) => {
+    firebase.auth().signInWithEmailAndPassword(emailFromUser, passwordFromUser)
     .then((user) => {
         console.log("Usuario logeado > " + JSON.stringify(user));
     })
     .catch((error)  => {
-        console.error("Error > " + error.message);
+        alert("Error > " + error.message);
     });
  }
