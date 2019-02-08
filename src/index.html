@@ -3,6 +3,7 @@
    <meta name="viewport" content="width=device-width, initial-scale=1">
    <link rel="stylesheet" href="./css/styles.css">
    <link rel="stylesheet" href="./css/grid.css">
+   <title>Like a Woman</title>
    <link href="https://fonts.googleapis.com/css?family=Bitter:400,700" rel="stylesheet">
    <link rel="icon" href="./img/IconoLAW.png">
 </head>
@@ -10,11 +11,13 @@
      <header class="logo">
          <div class="container">
              <div class="row">
-                 <div class="col-12"></div>
-                 <a href=" ">Home</a>
+                 <div class="col-12">
+                     <img src="./img/LogoBlanco.png" alt=" " id="logoIcon">
+                 </div>
              </div>
          </div>
      </header>
+     
      <main class="start" id="start">
          <div class="container">
              <div class="row">
@@ -34,14 +37,18 @@
              </div>
          </div>
      </main>
+
      <section id="welcome"> 
          <div class="container">
              <div class="row">
                  <div class="col-12">
-                     <h2>Like A Woman</h2>
-                     <p>Bienvenida a LAW, una gran comunidad femenina donde podrás encontrar mujeres deportistas, como tú.
-                     Te estabamos esperando</p>
-                     <img src="./img/LogoBlanco.png" id="img_welcome" alt="logo">
+                     <img src="./img/athlete-barbell-body-1552249.jpg" id="imgBarbell">
+                     <span>
+                         <h2>Like A Woman</h2>
+                         <p>Bienvenida a LAW, una gran comunidad femenina donde podrás encontrar mujeres deportistas, como tú.
+                         Te estabamos esperando</p>
+                         <img src="./img/LogoBlanco.png" id="img_welcome" alt="logo">
+                     </span>
                     </div>
                     <div class="col-12">
                         <button id="start_btn">Empezar</button>
@@ -49,26 +56,33 @@
              </div>
          </div>
      </section>
+
      <section id="app"> <!--Mobile ready-->
          <div class="container">
              <div class="row">
                  <div class="col-12">
                      <h1>¡Bienvenida a LAW!</h1>
-                    <textarea placeholder="¿Que estas pensando?"></textarea><br>
+                    <textarea id="textareaContect" placeholder="¿Que estas pensando?"></textarea><br>
                  </div>
             </div>
             <div class="row">
-                <div class="col-8">
+                <div class="col-6">
                    <button id="stateButton">Publicar</button>
                 </div>
-                <div class="col-4">
+                <div class="col-6">
                     <input type="radio" id="public" name="state"><label>Público</label><br>                 
                     <input type="radio" id="private" name="state"><label>Privado</label>           
                 </div>
             </div>
-        </div>
+            <div class="row">
+                <div class="col-12">
+                    <div id="postContainer"></div>
+                </div>
+            </div>
+        </div>|
     </section>
-   <div id="settingProfile">
+
+   <div id="settingProfile" style="display: none">
       <h3>Información de la Cuenta</h3>
       <p>Email</p>
       <input id="email" value="">
@@ -78,12 +92,14 @@
       <textarea id="sport" rows="20" class="settings-info" placeholder="Describenos tus intereses.."></textarea>
       <button id="save-settings">Guardar Cambios</button>
     </div>
-    <div id="postContainer"></div>
+ 
     <footer> <!--Mobile ready-->
         <div class="container">
             <div class="row">
                 <div class="col-12">
-                    <button id="logout_btn">salir</button>
+                        <form action="">
+                    <button id="logout_btn">Salir</button>
+                    </form>
                 </div>
             </div>
         </div>
@@ -104,6 +120,6 @@
    </script>
    <script src="js/dom.js"></script>
    <script src="js/auth.js"></script>
-   <script src="data.js"></script>
+   <script src="js/data.js"></script>
    </body>
 </html>
