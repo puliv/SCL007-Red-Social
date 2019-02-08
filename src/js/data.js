@@ -15,7 +15,7 @@ const readPost = (onPostChange) => {
 
 const  settingsPage =(email,username,sport)=>{
     firebase.database().ref("users/" + firebase.auth().currentUser.uid).update({
-        email:email,
+        email: email,
         userName: username,
         sport: sport
     });
