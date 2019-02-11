@@ -92,6 +92,13 @@ const readPostFromDatabase = () => {
   });
 }
 
+//Eliminar un post
+let removePost = document.getElementsByClassName('deletePost');
+   for (let i = 0; i < removePost.length; i ++) {
+    removePost[i].addEventListener("click", nullPost)
+
+
+
 document.getElementById('save-settings').addEventListener('click',
   (evento)=>{
   evento.preventDefault();
