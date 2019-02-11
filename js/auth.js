@@ -20,6 +20,7 @@ const registerUser = (email, password) => {
             alert("Error > " + error.message);
         });
  }
+
  //funcion iniciar sesion con firebase
  const loginUser =(email, password) => {
     firebase.auth().signInWithEmailAndPassword(email, password)
@@ -27,7 +28,7 @@ const registerUser = (email, password) => {
         console.log("Usuario logeado > " + JSON.stringify(user));
     })
     .catch((error)  => {
-        console.error("Error > " + error.message);
+        alert("Error > " + error.message);
     });
  }
  //funcion iniciar sesion con google

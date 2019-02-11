@@ -11,6 +11,7 @@ window.onload = () => {
           app.style.display = "none";
       }
   });
+
   //boton registrarse
   document.getElementById('register_btn').addEventListener('click',
       (event) => {
@@ -84,12 +85,8 @@ window.onload = () => {
                <input type="text" value="${post.val().post}">
                <h6>${post.val().status}</h6>
                <h6>${post.key}</h6>
-            
 
-
-
-  
-              <button id="${post.key}">Elimina</button>`;
+  <button id="${post.key}">Comentar</button>`;
 
          document.getElementById(post.key).addEventListener('click',
               (event) => {
@@ -99,4 +96,4 @@ window.onload = () => {
       });
   }
 
-};
+  };
