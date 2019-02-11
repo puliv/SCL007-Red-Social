@@ -1,110 +1,99 @@
-<html> <head>
-   <meta charset="UTF-8">
-   <meta name="viewport" content="width=device-width, initial-scale=1">
-   <link rel="stylesheet" href="./css/styles.css">
-   <link rel="stylesheet" href="./css/grid.css">
-   <link href="https://fonts.googleapis.com/css?family=Bitter:400,700" rel="stylesheet">
-</head>
- <body>
-     <header class="logo">
-         <div class="container">
-             <div class="row">
-                 <div class="col-12"></div>
-                 <a href=" ">Home</a>
-             </div>
-         </div>
-     </header>
-     <main class="start" id="start">
-         <div class="container">
-             <div class="row">
-                     <div>
-                         <h1 id="first_title">Registrate o inicia sesión</h1><br>
-                         <form action="">
-                         <label>Correo</label>
-                         <input id="emailTextfield" type="email" placeholder="Ingrese su correo electrónico..">
-                         <label>Contraseña</label>
-                         <input id="passwordTextfield" type="password"  placeholder="Ingrese su contraseña..">
+<!DOCTYPE html>
+<html>
 
-                         <button id="loginButton">INICIAR SESION</button>
-                         <button id="registerButton">REGISTRATE</button>
-                         <button id="sign-google"><img src="img/google.png" width="20" height="20"> INICIAR SESION CON GOOGLE</button>
-                         </form>
-                     </div>
-             </div>
-         </div>
-     </main>
-     <section id="welcome"> <!--Falta logo de LAW para poner aqui, mobile ready-->
-         <div class="container">
-             <div class="row">
-                 <div class="col-12">
-                     <h2>Like A Woman</h2>
-                     <p>Bienvenida a LAW, una gran comunidad femenina donde podrás encontrar mujeres deportistas, como tú.
-                     Te estabamos esperando</p>
-                    </div>
-                    <div class="col-12">
-                        <button id="start_btn">Empezar</button>
-                    </div>
-             </div>
-         </div>
-     </section>
-     <section id="app"> <!--Mobile ready-->
-         <div class="container">
-             <div class="row">
-                 <div class="col-12">
-                     <h1>¡Bienvenida a LAW!</h1>
-                    <textarea placeholder="¿Que estas pensando?"></textarea><br>
-                 </div>
-            </div>
-            <div class="row">
-                <div class="col-8">
-                   <button id="stateButton">Publicar</button>
-                </div>
-                <div class="col-4">
-                    <input type="radio" id="public" name="state"><label>Público</label><br>                 
-                    <input type="radio" id="private" name="state"><label>Privado</label>           
-                </div>
-            </div>
-            <div id="postContainer"></div>
-        </div>
-    </section>
-   <div id="settingProfile">
-      <h3>Información de la Cuenta</h3>
-      <p>Email</p>
-      <input id="email" value="">
-      <p>Nombre de Usuario</p>
-      <input id="username" class="settings-info" value="">
-      <p>Deporte que practicas</p>
-      <textarea id="sport" rows="20" class="settings-info" placeholder="Describenos tus intereses.."></textarea>
-      <button id="save-settings">Guardar Cambios</button>
-    </div>
- 
-    <footer> <!--Mobile ready-->
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="./css/styles.css">
+    <link rel="stylesheet" href="./css/grid.css">
+    <link href="https://fonts.googleapis.com/css?family=Bitter:400,700" rel="stylesheet">
+</head>
+
+<body>
+    <main class="start" id="start">
         <div class="container">
             <div class="row">
-                <div class="col-12">
-                        <form action="">
-                    <button id="logout_btn">salir</button>
+                <div>
+                    <h1 id="first_title">Registrate o inicia sesión</h1><br>
+                    <form action="">
+                        <label>Correo</label>
+                        <input id="text_email" type="email" placeholder="Ingrese su correo electrónico..">
+                        <label>Contraseña</label>
+                        <input id="text_password" type="password" placeholder="Ingrese su contraseña..">
+
+                        <button id="login_btn">INICIAR SESION</button>
+                        <button id="register_btn">REGISTRATE</button>
+                        <button id="sign_google_btn"><img src="img/google.png" width="20" height="20"> INICIAR SESION
+                            CON
+                            GOOGLE</button>
+                        <button id="sign_facebook_btn"><img src="img/facebook.png" width="20" height="20"> INICIAR
+                            SESION CON FACEBOOK</button>
                     </form>
                 </div>
             </div>
         </div>
-     </footer>
+    </main>
+    <section id="setting_profile" class="start">
+        <label>Nombre de Usuario</label>
+        <input type="text" id="username" placeholder="Ingrese un nombre de usuario">
+        <label>Fecha nacimiento</label>
+        <input type="date" id="birthdate">
+        <label>Deporte que practicas</label>
+        <input type="text" id="sport" placeholder="Ingrese un deporte">
+        <button id="save_settings">Guardar</button>
+    </section>
+    <section id="app">
+        <form action="index.html">
+            <!--Mobile ready-->
+        <div class="container">
+                <div class="row">
+                    <div class="col-12">
+                        <h1>¡Bienvenida a LAW!</h1>
+                        <textarea id="textareaContect" placeholder="¿Que estas pensando?"></textarea><br>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col-8">
+                        <button id="stateButton">Publicar</button>
+                    </div>
+                    <div class="col-4">
+                        <input type="radio" id="public" name="state" value="Público"><label>Público</label><br>
+                        <input type="radio" id="private" name="state" value="Privado"><label>Privado</label>
+                    </div>
+                </div>
+                <div id="postContainer"></div>
+            </div>
+        </form>    
+    </section>
+    <footer>
+        <!--Mobile ready-->
+        <div class="container">
+            <div class="row">
+                <div class="col-12">
+                    <form action="">
+                        <button id="sign_off_btn">salir</button>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </footer>
 
-   <script src="https://www.gstatic.com/firebasejs/5.8.1/firebase.js"></script>
-   <script>
-     // Initialize Firebase
-     var config = {
-       apiKey: "AIzaSyDcucwWZHxbPWTF89U6n8X6o1Oe_jput3I",
-       authDomain: "redsocial-9137e.firebaseapp.com",
-       databaseURL: "https://redsocial-9137e.firebaseio.com",
-       projectId: "redsocial-9137e",
-       storageBucket: "redsocial-9137e.appspot.com",
-       messagingSenderId: "500917157257"
-     };
-     firebase.initializeApp(config);
-   </script>
-   <script src="js/dom.js"></script>
-   <script src="js/auth.js"></script>
-   <script src="js/data.js"></script>
-   </body>
+    <script src="https://www.gstatic.com/firebasejs/5.8.1/firebase.js"></script>
+    <script>
+        // Initialize Firebase
+        var config = {
+            apiKey: "AIzaSyDcucwWZHxbPWTF89U6n8X6o1Oe_jput3I",
+            authDomain: "redsocial-9137e.firebaseapp.com",
+            databaseURL: "https://redsocial-9137e.firebaseio.com",
+            projectId: "redsocial-9137e",
+            storageBucket: "redsocial-9137e.appspot.com",
+            messagingSenderId: "500917157257"
+        };
+        firebase.initializeApp(config);
+    </script>
+    <script src="js/dom.js"></script>
+    <script src="js/auth.js"></script>
+    <script src="js/data.js"></script>
+</body>
+
 </html>

@@ -44,9 +44,12 @@ body{
     margin: 10px;
     font-size: 24PX;
  }
- #sign-google{
-    background-color: #C0392B;
- }
+ #sign_google_btn{
+   background-color: #C0392B;
+}
+#sign_facebook_btn{
+ background-color: #3B5998;
+}
  #welcome{
     background-color: #6C3483;
     text-align: center;
