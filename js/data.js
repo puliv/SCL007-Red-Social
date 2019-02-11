@@ -7,20 +7,20 @@ const registerPost = (postText, postStatus) => {
 };
 
 const readPost = (onPostChange) => {
-    const postRef = firebase.database().ref('users/post/');
+    const postRef = firebase.database().ref('users/post');
     postRef.on('child_added', (post)=> {
         onPostChange(post);
     });
   };
 
 //Borrar un post
-let deletePost = firebase.database().ref('users/post/');
+let deletePost = firebase.database().ref('users/post');
 let alert = confirm('Seguro deseas eliminar tu comentario?'); 
     if (alert == true) {
         deletePost.remove();
 	} else {
-        return  null 
-    }
+        return null 
+    };
 
 
 //const deletePost = removePost.child('users/post');
