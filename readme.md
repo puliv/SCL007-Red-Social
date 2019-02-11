@@ -12,3 +12,5 @@ Aqui se podran ver todas la publicaciones de los usuarios pertenecientes a la co
 Resumen Entrevista a Usuarios Primera Etapa
 
 A partir de la encuesta realizada a 29 mujeres jóvenes y adultas, que practican algún tipo de deporte, pudimos resolver que nuestra red social debe ser un punto de encuentro para que exista un entorno de organización y empoderamiento para ocupar más espacios que son dominados por hombres y aumentar la cantidad de mujeres que participan de alguna práctica deportiva.
+
+[Aquí podrás ver nuestro prototipo de alta:] https://www.figma.com/file/UhXhvar2EZWPzMrlOAIbnuVQ/LIKE-A-WOMEN-SOCIAL-NETWORK?node-id=0%3A1

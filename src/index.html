@@ -1,16 +1,25 @@
 <!DOCTYPE html>
-<html>
-
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1">
-    <link rel="stylesheet" href="./css/styles.css">
-    <link rel="stylesheet" href="./css/grid.css">
-    <link href="https://fonts.googleapis.com/css?family=Bitter:400,700" rel="stylesheet">
+<html> <head>
+   <meta charset="UTF-8">
+   <meta name="viewport" content="width=device-width, initial-scale=1">
+   <link rel="stylesheet" href="./css/styles.css">
+   <link rel="stylesheet" href="./css/grid.css">
+   <title>Like a Woman</title>
+   <link href="https://fonts.googleapis.com/css?family=Bitter:400,700" rel="stylesheet">
+   <link rel="icon" href="./img/IconoLAW.png">
 </head>
-
-<body>
-    <main class="start" id="start">
+ <body>
+     <header class="logo">
+         <div class="container">
+             <div class="row">
+                 <div class="col-12">
+                     <img src="./img/LogoBlanco.png" alt=" " id="logoIcon">
+                 </div>
+             </div>
+         </div>
+     </header>
+     
+       <main class="start" id="start">
         <div class="container">
             <div class="row">
                 <div>
@@ -32,7 +41,7 @@
                 </div>
             </div>
         </div>
-    </main>
+   </main>
     <section id="setting_profile" class="start">
         <label>Nombre de Usuario</label>
         <input type="text" id="username" placeholder="Ingrese un nombre de usuario">
@@ -42,36 +51,36 @@
         <input type="text" id="sport" placeholder="Ingrese un deporte">
         <button id="save_settings">Guardar</button>
     </section>
-    <section id="app">
-        <form action="index.html">
-            <!--Mobile ready-->
-        <div class="container">
-                <div class="row">
-                    <div class="col-12">
-                        <h1>¡Bienvenida a LAW!</h1>
-                        <textarea id="textareaContect" placeholder="¿Que estas pensando?"></textarea><br>
-                    </div>
-                </div>
-                <div class="row">
-                    <div class="col-8">
-                        <button id="stateButton">Publicar</button>
-                    </div>
-                    <div class="col-4">
-                        <input type="radio" id="public" name="state" value="Público"><label>Público</label><br>
-                        <input type="radio" id="private" name="state" value="Privado"><label>Privado</label>
-                    </div>
-                </div>
-                <div id="postContainer"></div>
+     <section id="app"> <!--Mobile ready-->
+       <form action ="index.html">
+         <div class="container">
+             <div class="row">
+                 <div class="col-12">
+                     <h1>¡Bienvenida a LAW!</h1>
+                    <textarea id="textareaContect" placeholder="¿Que estas pensando?"></textarea><br>
+                 </div>
             </div>
-        </form>    
-    </section>
-    <footer>
-        <!--Mobile ready-->
+            <div class="row">
+                <div class="col-6">
+                   <button id="stateButton">Publicar</button>
+                   <button id="deleteBtn">Eliminar</button>
+                </div>
+                <div class="col-6">
+                    <input type="radio" id="public" name="state" value="Público" ><label>Público</label><br>                 
+                    <input type="radio" id="private" name="state" value="Privado"><label>Privado</label>           
+              </div>
+           </div>
+           <div id="postContainer"></div>    
+</div>
+</form> 
+</section>       
+    <footer> <!--Mobile ready-->
         <div class="container">
             <div class="row">
                 <div class="col-12">
-                    <form action="">
-                        <button id="sign_off_btn">salir</button>
+                        <form action="">
+                    <button id="logout_btn">Salir</button>
+
                     </form>
                 </div>
             </div>
@@ -95,5 +104,5 @@
     <script src="js/auth.js"></script>
     <script src="js/data.js"></script>
 </body>
-
 </html>
+       
