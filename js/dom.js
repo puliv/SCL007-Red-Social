@@ -3,7 +3,7 @@ window.onload = () => {
     if (user) {
       sign_off_btn.style.display = "block";
       start.style.display = "none";
-     readPostFromDatabase();
+      readPostFromDatabase();
     } else {
       start.style.display = "block";
       sign_off_btn.style.display = "none";
@@ -78,30 +78,24 @@ window.onload = () => {
       registerPost(contect, statusRadio, email);
     })
   const readPostFromDatabase = () => {
-   // postContainer.innerHTML = "";
-
+    postContainer.innerHTML = "";
     readPost((post) => {
-      document.getElementById("post_text").innerHTML = post.val().post;
       postContainer.innerHTML +=
         `<h6>Publicación de:${post.val().email}</h6>
                <input type="text" value="${post.val().post}">
                <h6>${post.val().status}</h6>
                <h6>${post.key}</h6>
-              <button id="${post.key}" type="button" >Comentar</button>
-              <button id="edit_${post.key}" type="button" >Editar</button>`;
-      console.log(post.key);
-      document.getElementById(post.key).addEventListener('click',
-        (event) => {
-          event.preventDefault();
-          alert("entro al boton comentar///" + post.key);
-        })
-      document.getElementById('edit_' + post.key).addEventListener('click',
-        (event) => {
-          event.preventDefault();
-          alert("entro al boton editar///" + post.key);
-          
-
-        })
+               <button type="button" id="${post.key}">Comentar</button>
+               <button type="button" id="delete_btn${post.key}" class="deletePost">Eliminar</button>
+              <button id="edit_${post.key}" type="button" >Editar</button>`;//eliminar post
+      //hago una coleccion de botones
+      let coleccButton = document.getElementsByClassName("deletePost");
+      for (let i = 0; i < coleccButton.length; i++) {
+        coleccButton[i].addEventListener("click", deletePost);
+      }
+      
     });
+
   }
-  };
+
+};

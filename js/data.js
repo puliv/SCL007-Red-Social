@@ -25,6 +25,7 @@ const registerPost = (postText, postStatus,email) => {
     .catch((error) => {
       console.error("Error > " + error.message);
     });
+    location.reload();
 };
 
 const readPost = (onPostChange) => {
@@ -44,4 +45,19 @@ const readPost = (onPostChange) => {
     .catch((error)  => {
         console.error("Error > " + error.message);
     });
+  }
+//Borrar un post
+//Me posiciono en post a eliminar
+const deletePost = (key) => {
+//  console.log("hola");
+  let botonId=key.target.getAttribute("id").substring(10,50);
+  let alert = confirm('Seguro deseas eliminar tu comentario?');
+  if (alert === true) {
+    //Direccion o ruta del post que quiero eliminar
+    firebase.database().ref(`users/${firebase.auth().currentUser.uid}/post/${botonId}`).remove();
+    location.reload();
+  } else {
+    return null;
+  }
+
 }
