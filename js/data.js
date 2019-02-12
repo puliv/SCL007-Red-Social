@@ -25,6 +25,7 @@ const registerPost = (postText, postStatus, email) => {
     .catch((error) => {
       console.error("Error > " + error.message);
     });
+    location.reload(); //recargo pagina
 };
 
 const readPost = (onPostChange) => {
@@ -43,6 +44,7 @@ const deletePost = (key) => {
   if (alert === true) {
     //Direccion o ruta del post que quiero eliminar
     firebase.database().ref(`users/${firebase.auth().currentUser.uid}/post/${botonId}`).remove();
+    location.reload(); //recargamos la pagina
   } else {
     return null;
   }
