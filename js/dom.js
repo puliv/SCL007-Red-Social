@@ -1,118 +1,111 @@
 window.onload = () => {
-
-  checkAuthState((user)=>{
-    if(user){
-      start.style.display = "none";
-      app.style.display = "block";
-      logout_btn.style.display = "block";
-      readPostFromDatabase();
-    }else{
-      start.style.display = "block";
-      app.style.display = "none";
-      settingProfile.style.display = "none";
-      logout_btn.style.display = "none";
-    }
-  });
- 
-  document.getElementById('registerButton').addEventListener('click',
-  (event)=>{
-    event.preventDefault();
-    // document.getElementById("welcome").style.display = "block";
-    const emailFromUser = emailTextfield.value;
-    const passwordFromUser = passwordTextfield.value;
-    registerUser(emailFromUser, passwordFromUser);
-  })
- 
-  document.getElementById('loginButton').addEventListener('click',
-  (event)=>{
-    event.preventDefault();
-    const emailFromUser = emailTextfield.value;
-    const passwordFromUser = passwordTextfield.value;
-    loginUser(emailFromUser, passwordFromUser);
-  })
-
- 
-  document.getElementById('sign-google').addEventListener('click',
-  (event)=>{
-    event.preventDefault();
-    
-    var provider = new firebase.auth.GoogleAuthProvider();
-    firebase.auth().signInWithPopup(provider).then(function(result) {
-      // This gives you a Google Access Token. You can use it to access the Google API.
-      var token = result.credential.accessToken;
-      // The signed-in user info.
-      var user = result.user;
-      console.log(user);
-      // ...
-    }).catch(function(error) {
-      // Handle Errors here.
-      var errorCode = error.code;
-      var errorMessage = error.message;
-      // The email of the user's account used.
-      var email = error.email;
-      // The firebase.auth.AuthCredential type that was used.
-      var credential = error.credential;
-      // ...
-      console.log(errorCode + errorMessage + email + credential)
+    checkAuthState((user) => {
+        if (user) {
+            sign_off_btn.style.display = "block";
+            start.style.display = "none";
+            readPostFromDatabase();
+        } else {
+            start.style.display = "block";
+            sign_off_btn.style.display = "none";
+            setting_profile.style.display = "none";
+            app.style.display = "none";
+        }
     });
-  })
+
+    //boton registrarse
+    document.getElementById('register_btn').addEventListener('click',
+        (event) => {
+            event.preventDefault();
+            const emailFromUser = text_email.value;
+            const passwordFromUser = text_password.value;
+            registerUser(emailFromUser, passwordFromUser);
+            setting_profile.style.display = "block";
+        })
+    //guardar datos del perfil
+    document.getElementById('save_settings').addEventListener('click',
+        (evento) => {
+            evento.preventDefault();
+            const emailFromUser = firebase.auth().currentUser.email;
+            const usernameFromUser = username.value;
+            const birthdateFromUser = birthdate.value;
+            const sportFromUser = sport.value;
+            settingsPage(emailFromUser, usernameFromUser, birthdateFromUser, sportFromUser);
+            setting_profile.style.display = "none";
+            app.style.display = "block";
+        })
+    //boton iniciar sesion
+    document.getElementById('login_btn').addEventListener('click',
+        (event) => {
+            event.preventDefault();
+            const emailFromUser = text_email.value;
+            const passwordFromUser = text_password.value;
+            loginUser(emailFromUser, passwordFromUser);
+            app.style.display = "block";
+        })
+    //boton iniciar sesion con google
+    document.getElementById('sign_google_btn').addEventListener('click',
+        (event) => {
+            event.preventDefault();
+            loginUserGoogle();
+            app.style.display = "block";
+        })
+    //boton iniciar sesion con facebook
+    document.getElementById('sign_facebook_btn').addEventListener('click',
+        (event) => {
+            event.preventDefault();
+            loginUserFacebook();
+            app.style.display = "block";
+        })
+    //boton cerrar sesion
+    document.getElementById('sign_off_btn').addEventListener('click',
+        (event) => {
+            event.preventDefault();
+            signOff();
+        })
+    //boton publicar 
+    document.getElementById('state_btn').addEventListener('click',
+        (event) => {
+            event.preventDefault();
+            const contect = textareaContect.value;
+            const radios = document.getElementsByName('state');
+            const email = firebase.auth().currentUser.email;
+            for (let i = 0; i < radios.length; i++) {
+                if (radios[i].checked) {
+                    statusRadio = radios[i].value;
+                    break;
+                }
+            }
+            registerPost(contect, statusRadio, email);
+        });
+        
+    const readPostFromDatabase = () => {
+        postContainer.innerHTML = "";
+        readPost((post) => {
+            postContainer.innerHTML +=
+                `<h6>Publicación de:${post.val().email}
+               <input type="text" value="${post.val().post}">
+               <h6>${post.val().status}</h6>
+               <h6>${post.key}</h6>
+
+                 <button type="button" id="${post.key}">Comentar</button>
+                 <button type="button" id="delete_btn${post.key}" class="eliminar">Eliminar</button>`; //eliminar post
+                 let coleccBoton=document.getElementsByClassName("eliminar");
+                 for (let i=0; i<coleccBoton.length; i++){
+                     coleccBoton[i].addEventListener("click",deletePost);
+                 }
+            //   const p="delete_btn"+post.key;
+            //     document.getElementById(p).addEventListener('click',(event)=>{
+            //         event.preventDefault();
+            //         let nuevop = p.substring(10,50);
+            //         console.log(p);
+
+            //        // console.log(post.key);
+            //         // let nuevop=p.substring(11,20);
+            //         // confirm(nuevop);
+            //         deletePost(nuevop);
+            //     });
+        });
+
+    }
   
-  document.getElementById('logout_btn').addEventListener('click',
-  (event)=>{
-    
-    event.preventDefault();
-    firebase.auth().signOut().then(function() {
-      // Sign-out successful.
-    }).catch(function(error) {
-      // An error happened.
-    });
-  })
-
-
-  document.getElementById('stateButton').addEventListener('click',
-  (event)=>{
-    event.preventDefault();
-    const contect = textareaContect.value;
-    const radios = document.getElementsByName('state');
-    for (var i = 0, length = radios.length; i < length; i++){
-      if (radios[i].checked){
-        statusRadio = radios[i].value;
-        break;
-      }
-    }
-    registerPost(contect, radios);
-  })
 };
-
-const readPostFromDatabase = () => {
-  readPost((post)=>{
-    postContainer.innerHTML = postContainer.innerHTML + 
-    `<h3>${post.val().post}</h3>
-     <h6>${post.val().status}</h6>`; 
-  });
-}
-
-//Eliminar un post
-let removePost = document.getElementsByClassName('deletePost');
-   for (let i = 0; i < removePost.length; i ++) {
-    removePost[i].addEventListener('click', nullPost)
-   };
-
-
-document.getElementById('save-settings').addEventListener('click',
-  (evento)=>{
-  evento.preventDefault();
-  const emailFromUser = email.value;
-  const usernameFromUser = username.value;
-  const sportFromUser = sport.value;
-  settingsPage(emailFromUser, usernameFromUser,sportFromUser);
-
-})
-document.getElementById('settingProfile').addEventListener('click',
-  (evento)=>{
-    evento.preventDefault();
-    start.style.display = "none";
-    app.style.display = "none";
-    settingProfile.style.display = "block";
-    logout_btn.style.display = "none";
-  })
