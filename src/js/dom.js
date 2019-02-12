@@ -11,6 +11,7 @@ window.onload = () => {
       app.style.display = "none";
     }
   });
+
   //boton registrarse
   document.getElementById('register_btn').addEventListener('click',
     (event) => {
@@ -102,4 +103,4 @@ window.onload = () => {
     });
   }
 
-};
+  };
