@@ -12,12 +12,12 @@ const settingsPage = (email, username, birthdate, sport) => {
       console.error("Error > " + error.message);
     });
 }
-
-const registerPost = (postText, postStatus, email) => {
-  const newPostKey = firebase.database().ref('users/post/').child('post').push().key;
-  firebase.database().ref(`users/${firebase.auth().currentUser.uid}/post/${newPostKey}`).set({
-      post: postText,
-      status: postStatus,
+//funcion registrar publicacion
+const registerPost = (postText, postStatus,email) => {
+    const newPostKey = firebase.database().ref('users/post/').child('post').push().key;
+    firebase.database().ref(`users/${firebase.auth().currentUser.uid}/post/${newPostKey}`).set({
+      post : postText,
+      status : postStatus,
       email: email
     }).then(() => {
       alert(firebase.auth().currentUser.email + " se ha publicado");
@@ -25,6 +25,7 @@ const registerPost = (postText, postStatus, email) => {
     .catch((error) => {
       console.error("Error > " + error.message);
     });
+    location.reload();
 };
 
 const readPost = (onPostChange) => {
@@ -34,6 +35,17 @@ const readPost = (onPostChange) => {
   });
 };
 
+  const  editPost =(post,key)=>{
+    firebase.database().ref(`users/${firebase.auth().currentUser.uid}/post/${key}`).update({
+        post:post
+    })
+    .then(() => {
+        alert(username + " su publicación se edito correctamente");
+    })
+    .catch((error)  => {
+        console.error("Error > " + error.message);
+    });
+  }
 //Borrar un post
 //Me posiciono en post a eliminar
 const deletePost = (key) => {
@@ -43,25 +55,9 @@ const deletePost = (key) => {
   if (alert === true) {
     //Direccion o ruta del post que quiero eliminar
     firebase.database().ref(`users/${firebase.auth().currentUser.uid}/post/${botonId}`).remove();
+    location.reload();
   } else {
     return null;
   }
 
 }
-
-//const deletePost = removePost.child('users/post');
-// Delete the file
-//  deletePost.delete().then(function(){
-//}).catch(function(error){
-//  Uh-oh, an error occurred!
-//  });
-
-// Create a reference to the file to delete
-//var desertRef = storageRef.child('images/desert.jpg');
-
-// Delete the file
-//desertRef.delete().then(function() {
-// File deleted successfully
-//}).catch(function(error) {
-// Uh-oh, an error occurred!
-//});
