@@ -3,7 +3,7 @@ window.onload = () => {
     if (user) {
       sign_off_btn.style.display = "block";
       start.style.display = "none";
-      readPostFromDatabase();
+     readPostFromDatabase();
     } else {
       start.style.display = "block";
       sign_off_btn.style.display = "none";
@@ -78,9 +78,26 @@ window.onload = () => {
       registerPost(contect, statusRadio, email);
     })
   const readPostFromDatabase = () => {
-    postContainer.innerHTML = "";
+   // postContainer.innerHTML = "";
+
     readPost((post) => {
-      postContainer.innerHTML +=
+      document.getElementById("post_text").innerHTML = post.val().post;
+
+     
+    /*  let textarea = document.createElement("textarea");
+
+
+      let textPost = document.createTextNode(post.val().post);
+
+      textarea.appendChild(textPost);
+      document.getElementById('postContainer').appendChild(textarea);*/
+      
+     
+     
+     
+     
+     
+      /* postContainer.innerHTML +=
         `<h6>Publicación de:${post.val().email}</h6>
                <input type="text" value="${post.val().post}">
                <h6>${post.val().status}</h6>
@@ -99,8 +116,13 @@ window.onload = () => {
           alert("entro al boton editar///" + post.key);
           
 
-        })
+        })*/
     });
   }
+
+
+let cont = postContainer.value;
+console.log(cont);
+
 
   };
