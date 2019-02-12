@@ -37,7 +37,7 @@ const readPost = (onPostChange) => {
 //Borrar un post
 //Me posiciono en post a eliminar
 const deletePost = (key) => {
-  console.log("hola");
+//  console.log("hola");
   let botonId=key.target.getAttribute("id").substring(10,50);
   let alert = confirm('Seguro deseas eliminar tu comentario?');
   if (alert === true) {
