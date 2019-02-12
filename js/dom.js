@@ -82,22 +82,7 @@ window.onload = () => {
 
     readPost((post) => {
       document.getElementById("post_text").innerHTML = post.val().post;
-
-     
-    /*  let textarea = document.createElement("textarea");
-
-
-      let textPost = document.createTextNode(post.val().post);
-
-      textarea.appendChild(textPost);
-      document.getElementById('postContainer').appendChild(textarea);*/
-      
-     
-     
-     
-     
-     
-      /* postContainer.innerHTML +=
+      postContainer.innerHTML +=
         `<h6>Publicación de:${post.val().email}</h6>
                <input type="text" value="${post.val().post}">
                <h6>${post.val().status}</h6>
@@ -116,13 +101,7 @@ window.onload = () => {
           alert("entro al boton editar///" + post.key);
           
 
-        })*/
+        })
     });
   }
-
-
-let cont = postContainer.value;
-console.log(cont);
-
-
   };
