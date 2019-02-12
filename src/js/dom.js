@@ -77,6 +77,8 @@ window.onload = () => {
             }
             registerPost(contect, statusRadio, email);
         });
+
+        
         
     const readPostFromDatabase = () => {
         postContainer.innerHTML = "";
