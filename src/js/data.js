@@ -46,13 +46,13 @@ const readPost = (onPostChange) => {
     });
 }
 //Borrar un post
-let deletePost = firebase.database().ref('users/post/');
+/*let deletePost = firebase.database().ref('users/post/');
 let alert = confirm('Seguro deseas eliminar tu comentario?'); 
     if (alert == true) {
         deletePost.remove();
 	} else {
         return  null 
-    }
+    }*/
 
 
 //const deletePost = removePost.child('users/post');
