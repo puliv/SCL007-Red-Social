@@ -88,10 +88,11 @@ window.onload = () => {
                <h6>${post.key}</h6>
 
                  <button type="button" id="${post.key}">Comentar</button>
-                 <button type="button" id="delete_btn${post.key}" class="eliminar">Eliminar</button>`; //eliminar post
-                 let coleccBoton=document.getElementsByClassName("eliminar");
-                 for (let i=0; i<coleccBoton.length; i++){
-                     coleccBoton[i].addEventListener("click",deletePost);
+                 <button type="button" id="delete_btn${post.key}" class="deletePost">Eliminar</button>`; //eliminar post
+                 //hago una coleccion de botones
+                 let coleccButton=document.getElementsByClassName("deletePost");
+                 for (let i=0; i<coleccButton.length; i++){
+                     coleccButton[i].addEventListener("click",deletePost);
                  }
             //   const p="delete_btn"+post.key;
             //     document.getElementById(p).addEventListener('click',(event)=>{
