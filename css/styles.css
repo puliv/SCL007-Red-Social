@@ -1,4 +1,3 @@
-
 body{
    font-family: 'Bitter', serif;
    background-color: #D2B4DE;
@@ -7,6 +6,10 @@ body{
     background-color: #6C3483;
     width: 100%;
     height: auto;
+ }
+ #logoIcon{
+   width: 36%;
+   margin: 0 100px;
  }
  .start{
     margin-top: 30px;
@@ -54,13 +57,23 @@ body{
     background-color: #6C3483;
     text-align: center;
     color: white;
+    display: none;
+ }
+ /* #img_welcome{
+    width:40%;
+    height:auto;
+    margin-top:10px;
+ }
+ #imgBarbell{
+    width: 100%;
  }
  #welcome p {
     width: 100%;
     text-align: center;
     color: white;
     padding: 0 auto;
- }
+    margin-top: 10px;
+    } */
  #start_btn{
     background-color: #D2B4DE;
     width: 100px;
@@ -95,11 +108,18 @@ body{
     height: 30px;
     margin-left: 70%;
  }
+ #postContainer{
+    border: solid white;
+ }
  @media only screen and (min-width: 768px) {
     body{
        align-content: center;
     }
-    .start{
+   #logoIcon {
+      width: 15%;
+      margin: 0;
+   }
+   .start{
         margin-left: 34%;
         width: 30%;
     }
@@ -110,11 +130,11 @@ body{
       width: 90px;
    }
    textarea{
-      width: 70%;
+      width: 50%;
    }
-   #logout{
+   #logout_btn{
       width: 60px;
-      margin-left: 320px;
+      margin-left: 0px;
    }
    #welcome{
       width:100%;
