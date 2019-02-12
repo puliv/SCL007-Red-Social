@@ -12,7 +12,7 @@ const  settingsPage =(email,username,birthdate,sport)=>{
         console.error("Error > " + error.message);
     });
 }
-
+//funcion registrar publicacion
 const registerPost = (postText, postStatus,email) => {
     const newPostKey = firebase.database().ref('users/post/').child('post').push().key;
     firebase.database().ref(`users/${firebase.auth().currentUser.uid}/post/${newPostKey}`).set({
@@ -33,3 +33,15 @@ const readPost = (onPostChange) => {
         onPostChange(post);
     });
   };
+
+  const  editPost =(post,key)=>{
+    firebase.database().ref(`users/${firebase.auth().currentUser.uid}/post/${key}`).update({
+        post:post
+    })
+    .then(() => {
+        alert(username + " su publicación se edito correctamente");
+    })
+    .catch((error)  => {
+        console.error("Error > " + error.message);
+    });
+}
