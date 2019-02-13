@@ -87,7 +87,7 @@ window.onload = () => {
                <h6>${post.key}</h6>
                <button type="button" id="${post.key}">Comentar</button>
                <button type="button" id="delete_btn${post.key}" class="deletePost">Eliminar</button>
-              <button id="edit_${post.key}" type="button" >Editar</button>`;//eliminar post
+               <button id="edit_${post.key}" type="button" >Editar</button>`;//eliminar post
       //hago una coleccion de botones
       let coleccButton = document.getElementsByClassName("deletePost");
       for (let i = 0; i < coleccButton.length; i++) {
