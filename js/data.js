@@ -40,7 +40,7 @@ const readPost = (onPostChange) => {
         post:post
     })
     .then(() => {
-        alert(username + " su publicación se edito correctamente");
+        alert(username + "su publicación se editó correctamente");
     })
     .catch((error)  => {
         console.error("Error > " + error.message);
@@ -55,7 +55,7 @@ const deletePost = (key) => {
   if (alert === true) {
     //Direccion o ruta del post que quiero eliminar
     firebase.database().ref(`users/${firebase.auth().currentUser.uid}/post/${botonId}`).remove();
-    locationg.reload(); //recargamos la pagina
+    location.reload(); //recargamos la pagina
   } else {
     return null;
   }
