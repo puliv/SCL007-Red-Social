@@ -87,8 +87,9 @@ window.onload = () => {
                <h6>${post.key}</h6>
                <button type="button" id="${post.key}">Comentar</button>
                <button type="button" id="delete_btn${post.key}" class="deletePost">Eliminar</button>
-               <button id="edit_${post.key}" type="button" >Editar</button>`;//eliminar post
-      //hago una coleccion de botones
+               <button id="edit_${post.key}" type="button" >Editar</button>
+               <button id="${post.key}" type="button" rel="icon">like</button>`;
+      //hago una coleccion de botones con los key
       let coleccButton = document.getElementsByClassName("deletePost");
       for (let i = 0; i < coleccButton.length; i++) {
         coleccButton[i].addEventListener("click", deletePost);
@@ -99,3 +100,6 @@ window.onload = () => {
   }
 
 };
+//para agregar foto al perfil
+// document.getElementById('perfilName').innerHTML = `<div class="col-7"><p class="perfil-name">${firebase.auth().currentUser.displayName ? firebase.auth().currentUser.displayName : "Anonimo"}</p></div>
+//<div class="col-5"><img class="perfil-image" src=${firebase.auth().currentUser.photoURL ? firebase.auth().currentUser.photoURL : "./assets/user11.png"} alt="imagen usuario"></div>`
