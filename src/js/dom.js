@@ -2,6 +2,7 @@ window.onload = () => {
   checkAuthState((user) => {
     if (user) {
       sign_off_btn.style.display = "block";
+      setting_profile.style.display = "none";
       start.style.display = "none";
       readPostFromDatabase();
     } else {
@@ -81,21 +82,21 @@ window.onload = () => {
     postContainer.innerHTML = "";
     readPost((post) => {
       postContainer.innerHTML +=
-        `<h6>Publicación de:${post.val().email}</h6>
-               <input type="text" value="${post.val().post}">
-               <h6>${post.val().status}</h6>
-               <h6>${post.key}</h6>
-               <button type="button" id="${post.key}">Comentar</button>
-               <button type="button" id="delete_btn${post.key}" class="deletePost">Eliminar</button>
-              <button id="edit_${post.key}" type="button" >Editar</button>`;//eliminar post
+        `<div>
+          <h5>${post.val().userName}</h5>
+          <h6>${post.val().status}</h6>
+          <textarea disabled id="txtAreaPost">${post.val().post}</textarea>
+          <i class="far fa-heart" title="Me gusta esta publicacion"></i>
+          <i class="far fa-comment-dots coment" title="Comentar publicacion" id="${post.key}"></i>
+          <i class="far fa-edit" title="Editar publicacion" id="edit_${post.key}"></i>
+          <i class="far fa-trash-alt deletePost" title="Eliminar publicacion" id="delete_btn${post.key}"></i>
+          </div>`;
       //hago una coleccion de botones
       let coleccButton = document.getElementsByClassName("deletePost");
       for (let i = 0; i < coleccButton.length; i++) {
         coleccButton[i].addEventListener("click", deletePost);
       }
-
     });
-
   }
 
 };
