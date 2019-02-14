@@ -2,7 +2,9 @@ window.onload = () => {
   checkAuthState((user) => {
     if (user) {
       sign_off_btn.style.display = "block";
+
       setting_profile.style.display = "none";
+
       start.style.display = "none";
       readPostFromDatabase();
     } else {
