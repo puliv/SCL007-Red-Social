@@ -49,8 +49,7 @@ const readPost = (onPostChange) => {
 //Borrar un post
 //Me posiciono en post a eliminar
 const deletePost = (key) => {
-//  console.log("hola");
-  let botonId=key.target.getAttribute("id").substring(10,50);
+  let botonId = key.target.getAttribute("id").substring(10, 50);// Target Devuelve el elemento del DOM que disparó el evento (inicialmente)
   let alert = confirm('Seguro deseas eliminar tu comentario?');
   if (alert === true) {
     //Direccion o ruta del post que quiero eliminar
