@@ -89,8 +89,7 @@ window.onload = () => {
           <h6>${post.val().status}</h6>
         </div>
         <div class="col-6" id="icons">
-          <i class="far fa-comment-dots comentPost" title="Comentar publicacion" id="coment_post_btn${post.key}"></i>
-          <i class="far fa-trash-alt deletePost" title="Eliminar publicacion" id="delete_btn${post.key}"></i>
+        <i class="far fa-trash-alt deletePost" title="Eliminar publicacion" id="delete_btn${post.key}"></i>
         </div>
           <div>  
           <textarea disabled class="txtAreaPost">${post.val().post}</textarea>
@@ -100,6 +99,7 @@ window.onload = () => {
           </div>`;
 
       //hago una coleccion de botones
+
       let coleccButton = document.getElementsByClassName("deletePost");
       for (let i = 0; i < coleccButton.length; i++) {
         coleccButton[i].addEventListener("click", deletePost);

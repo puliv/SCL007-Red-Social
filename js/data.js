@@ -28,7 +28,7 @@ const registerPost = (postText, postStatus,email) => {
       status : postStatus,
       email: email
     }).then(() => {
-      alert(firebase.auth().currentUser.email + " se ha publicado");
+      console.log(firebase.auth().currentUser.email + " se ha publicado");
     })
     .catch((error) => {
       console.error("Error > " + error.message);
@@ -96,3 +96,6 @@ const registerComentPostPublic = (keyPost, comentPost) => {
 };*/
 
 // función Likes
+const likePost = (keyPost) =>{
+  
+}
