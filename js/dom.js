@@ -2,14 +2,14 @@ window.onload = () => {
   checkAuthState((user) => {
     if (user) {
       sign_off_btn.style.display = "block";
-      setting_profile.style.display = "none";
       start.style.display = "none";
+      setting_profile.style.display = "none";
       readPostFromDatabase();
     } else {
       start.style.display = "block";
-      sign_off_btn.style.display = "none";
-      setting_profile.style.display = "none";
+      foooter.style.display = "none";
       app.style.display = "none";
+      setting_profile.style.display = "none";
     }
   });
 
@@ -21,7 +21,9 @@ window.onload = () => {
       const passwordFromUser = text_password.value;
       registerUser(emailFromUser, passwordFromUser);
       setting_profile.style.display = "block";
-    })
+      app.display = "none";
+
+    });
   //guardar datos del perfil
   document.getElementById('save_settings').addEventListener('click',
     (evento) => {
@@ -31,9 +33,8 @@ window.onload = () => {
       const birthdateFromUser = birthdate.value;
       const sportFromUser = sport.value;
       settingsPage(emailFromUser, usernameFromUser, birthdateFromUser, sportFromUser);
-      setting_profile.style.display = "none";
       app.style.display = "block";
-    })
+    });
   //boton iniciar sesion
   document.getElementById('login_btn').addEventListener('click',
     (event) => {
@@ -80,23 +81,73 @@ window.onload = () => {
     })
   const readPostFromDatabase = () => {
     postContainer.innerHTML = "";
-    readPost((post) => {
+    readPostPublic((post) => {
       postContainer.innerHTML +=
-        `<div>
-          <h5>${post.val().userName}</h5>
+        `<div id="container_post">
+        <div class="col-6" id="email_status">
+          <h5>${post.val().email}</h5>
           <h6>${post.val().status}</h6>
-          <textarea disabled id="txtAreaPost">${post.val().post}</textarea>
-          <i class="far fa-heart" title="Me gusta esta publicacion"></i>
-          <i class="far fa-comment-dots coment" title="Comentar publicacion" id="${post.key}"></i>
-          <i class="far fa-edit" title="Editar publicacion" id="edit_${post.key}"></i>
+        </div>
+        <div class="col-6" id="icons">
+          <i class="far fa-comment-dots comentPost" title="Comentar publicacion" id="coment_post_btn${post.key}"></i>
           <i class="far fa-trash-alt deletePost" title="Eliminar publicacion" id="delete_btn${post.key}"></i>
+        </div>
+          <div>  
+          <textarea disabled class="txtAreaPost">${post.val().post}</textarea>
+          </div>
+        <div id"coments">
+        </div>
           </div>`;
+
       //hago una coleccion de botones
       let coleccButton = document.getElementsByClassName("deletePost");
       for (let i = 0; i < coleccButton.length; i++) {
         coleccButton[i].addEventListener("click", deletePost);
       }
-    });
-  }
+      let coleccButtonComent = document.getElementsByClassName("comentPost");
+      for (let i = 0; i < coleccButtonComent.length; i++) {
+        coleccButtonComent[i].addEventListener("click", comentPost = (key) => {
+          const botonId = key.target.getAttribute("id").substring(15, 50);
+          const modal = document.getElementById('myModal');
+          modal.style.display = "block";
+          modal.innerHTML = `
+            <div class="modal-content">
+              <div class="container">
+                <div class="row">
+                  <div class="col-12">
+                    <input type="hidden" id="key_post_txt" value="${botonId}">
+                    <textarea id="coment_post_txt" placeholder="¿Que quieres comentar?"></textarea><br>
+                  </div>
+                </div>
+                <div class="row">
+                  <div class="col-6">
+                    <button id="coment_post_btn">Comentar</button>
+                  </div>
+               </div>
+              </div>
+            </div>`;
 
-};
+          // const comentPostRef = firebase.database().ref(`coments/${botonId}`);
+          // comentPostRef.on('child_added', (comentPost) => {
+
+          //   coment.innerHTML += comentPost.val().comentPost
+          // });
+          window.onclick = function (event) {
+            if (event.target == modal) {
+              modal.style.display = "none";
+            }
+          } 
+              document.getElementById('coment_post_btn').addEventListener('click',
+                (event) => {
+                  event.preventDefault();
+                  const keyPost = key_post_txt.value;
+                  const comentPost = coment_post_txt.value;
+                  registerComentPostPublic(keyPost, comentPost);
+                  modal.style.display = "none";
+                })
+            });
+          }
+        });
+      }
+    
+    };

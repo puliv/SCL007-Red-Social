@@ -7,10 +7,11 @@ body{
     width: 100%;
     height: auto;
     margin-bottom: 0;
+    padding-bottom: 0;
  }
- #logoIcon{
-   width: 40%;
-   margin: 0 90px;
+ #logo_icon{
+   width: 45%;
+   margin: 0 70px;
  }
  .start{
     width: 100%;
@@ -47,22 +48,21 @@ body{
     font-size: 14px;
     font-weight: bold;
  }
-#sign_google_btn img{
+.social_icon{
+   width: 50px;
+   height: auto;
+   border-radius: 50px;
+   align-content: center;
+}
+#sign_google_btn {
+    margin-left: 90px;
+ }
+ #icon_app{
     width: 50px;
     height: auto;
-    border-radius: 50px;
-    margin-left: 100px;
-    background-color: blue;
- }
- #sign_facebook_btn i{
-    width: 50px;
-    height: auto;
-    border-radius: 50px;
- }
- #icon_app img{
-    width: 100px;
-    height: auto;
-    margin: 10px 20px;
+    opacity: 0.1;
+    margin-top: 15px;
+    margin-left: 120px;
  }
  ::-webkit-input-placeholder { color: #D2B4DE; }
  :-moz-placeholder { /* Firefox 18- */ color:#D2B4DE; }
@@ -74,11 +74,9 @@ body{
     margin: 0px 10px;;
     font-size: 20PX;
  }
- #welcome{
-    background-color: #6C3483;
-    text-align: center;
-    color: white;
-    display: none;
+ #app_welcome{
+    padding-bottom: 0px;
+    padding-left: 6px;
  }
 #app img{
     width: 50px;
@@ -91,11 +89,17 @@ body{
    height: 100px;
    margin-top: 10px;
  }
- #stateButton{
+ #stateButton button{
     width: 100%;
     background-color: #6C3483;
     color: white;
     font-weight: bold;
+    height: 40px;
+    margin: 10px;
+    border-radius: 5px;
+    border: 1px solid #6C3483;
+    font-family: 'Bitter', serif;
+    padding-left: 10px;
  }
  #public, #private{
     margin-top: 10px;
@@ -106,14 +110,69 @@ body{
     height: 30px;
     margin-left: 70%;
  }
- #txtAreaPost{
+ #postContainer{
+   border-radius: 10px;
+   border-style: solid;
+   border-color:white;
+   padding: 5px;
+   margin: 10px;
+}
+#email_status{
+   padding-top: 5px;
+   padding-left: 5px;
+}
+#icons{
+   padding-top: 5px;
+   padding-left: 80px;
+}
+ .txtAreaPost{
     width: 100%;
     height: 100px;
     background-color: #D2B4DE;
     color: black;
     font-family: 'Lato', sans-serif;
     font-size: 20px;
-    border: none;
+    border-left: none;
+    border-right: none;
+    border-top: none;
+    border-bottom-color: white;
+ }
+ .modal {
+   display: none; /* Hidden by default */
+   position: fixed; /* Stay in place */
+   z-index: 1; /* Sit on top */
+   padding-top: 100px; /* Location of the box */
+   left: 0;
+   top: 0;
+   width: 100%; /* Full width */
+   height: 100%; /* Full height */
+   overflow: auto; /* Enable scroll if needed */
+   background-color: rgb(0,0,0); /* Fallback color */
+   background-color: rgba(0,0,0,0.4); /* Black w/ opacity */
+ }
+ 
+ /* Modal Content */
+ .modal-content {
+   background-color: #fefefe;
+   margin: auto;
+   padding: 20px;
+   border: 1px solid #888;
+   width: 80%;
+ }
+ 
+ /* The Close Button */
+ .close {
+   color: #aaaaaa;
+   float: right;
+   font-size: 28px;
+   font-weight: bold;
+ }
+ 
+ .close:hover,
+ .close:focus {
+   color: #000;
+   text-decoration: none;
+   cursor: pointer;
  }
  i{
     display: inline;
@@ -148,10 +207,6 @@ body{
    #logout_btn{
       width: 60px;
       margin-left: 0px;
-   }
-   #welcome{
-      width:100%;
-      height: 100%;
    }
 }
  

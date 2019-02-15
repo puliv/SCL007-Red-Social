@@ -18,7 +18,7 @@
         <div class="container">
             <div class="row">
                 <div class="col-12">
-                    <img src="./img/LogoBlanco.png" alt=" " id="logoIcon">
+                    <img src="./img/LogoBlanco.png" alt="Like a Woman" id="logo_icon">
                 </div>
             </div>
         </div>
@@ -35,8 +35,12 @@
                         <input id="text_password" type="password" placeholder="Ingrese contraseña..">
                         <button id="login_btn">INICIAR SESION</button>
                         <button id="register_btn">REGISTRATE</button>
-                        <icon id="sign_google_btn" title="Iniciar sesión con Google"><img src="img/google.png">
-                        <icon id="sign_facebook_btn" title="Iniciar sesión con Facebook"><img src="img/facebook.png">
+                        <icon id="sign_google_btn" title="Iniciar sesión con Google">
+                            <img class="social_icon" src="img/google.png" />
+                        </icon>
+                        <icon id="sign_facebook_btn"  title="Iniciar sesión con Facebook">
+                            <img class="social_icon"src="img/facebook.png"/>
+                        </icon>
                     </form>
                     <img id="icon_app" src="./img/IconoLAW.png">
                 </div>
@@ -57,7 +61,7 @@
         <form action="index.html">
             <div class="container">
                 <div class="row">
-                    <div class="col-12">
+                    <div class="col-12" id="app_welcome">
                         <h1>¡Bienvenida a LAW!</h1>
                         <textarea id="textareaContect" placeholder="¿Que estas pensando?"></textarea><br>
                     </div>
@@ -72,17 +76,18 @@
                     </div>
                 </div>
                 <div class="row">
-                    <div class="col-12">
-                        <div id="postContainer">
-                            <textarea id="post_text"></textarea>
+                    <div class="col-11" id="postContainer"></div>
+                    <div id="myModal" class="modal">
+                            <span class="close">&times;</span>
                         </div>
+                    <div id="MySecondModal">
+                            <span class="modal">&times;</span>
                     </div>
                 </div>
             </div>
         </form>
     </section>
-    <footer>
-        <!--Mobile ready-->
+    <footer id="foooter">
         <div class="container">
             <div class="row">
                 <div class="col-12">
